@@ -55,6 +55,7 @@ app.get('/api/v1/forecast', async (req, res) => {
             : "Weather is manageable. Stay hydrated.";
 
         res.json({
+            cityName: weatherRes.data.timezone.split('/')[1] || "MY Location",
             current: temp,
             safetyMessage: safetyMessage,
             forecast: forecast
